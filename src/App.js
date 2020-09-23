@@ -83,14 +83,16 @@ function App() {
       <input  type="file"  onChange={onChange}/>
       <button onClick={createPost}>Add</button><br/>
       </div>
+      <hr/>
       <div style={{marginBottom: 30}}>
         {
           posts.map(post => (
             <div key={post.id || post.name}>
-              <a target="_blank" rel="noopener noreferrer" href={post.url}><h4>{post.name}</h4></a>
-              &nbsp; <button onClick={() => deletePost(post)}>x</button>
+              <h4><a target="_blank" rel="noopener noreferrer" href={post.url}>{post.name}</a>
+              &nbsp; <button onClick={() => deletePost(post)}>delete</button></h4>
               <div>{post.description}</div>
               {post.image && <img src={post.image} alt={post.name} style={{width: 400}} />}              
+              <hr/>
             </div>
           ))
         }
