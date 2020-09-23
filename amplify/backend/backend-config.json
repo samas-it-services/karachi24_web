@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "karachi24web953576ca": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
