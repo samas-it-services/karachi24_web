@@ -87,8 +87,8 @@ function App() {
         {
           posts.map(post => (
             <div key={post.id || post.name}>
-              <p><a target="_blank" rel="noopener noreferrer" href={post.url}>{post.name}</a>
-              &nbsp; <button onClick={() => deletePost(post)}>x</button></p>
+              <a target="_blank" rel="noopener noreferrer" href={post.url}><h4>{post.name}</h4></a>
+              &nbsp; <button onClick={() => deletePost(post)}>x</button>
               <div>{post.description}</div>
               {post.image && <img src={post.image} alt={post.name} style={{width: 400}} />}              
             </div>
