@@ -1,0 +1,5 @@
+{
+    "AppSyncApiName": "karachi24WebApi",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false
+}
