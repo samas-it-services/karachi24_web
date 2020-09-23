@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -7,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          Welcome to Karach24.com
+          Welcome to Karach24.com (dev)
         </p>
       </header>
     </div>
