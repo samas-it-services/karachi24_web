@@ -2,6 +2,39 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "Lambda resource stack creation using Amplify CLI",
   "Parameters": {
+    "GROUP": {
+      "Type": "String",
+      "Default": ""
+    },
+    "modules": {
+      "Type": "String",
+      "Default": "",
+      "Description": "Comma-delimmited list of modules to be executed by a lambda trigger. Sent to resource as an env variable."
+    },
+    "resourceName": {
+      "Type": "String",
+      "Default": ""
+    },
+    "trigger": {
+      "Type": "String",
+      "Default": "true"
+    },
+    "functionName": {
+      "Type": "String",
+      "Default": ""
+    },
+    "roleName": {
+      "Type": "String",
+      "Default": ""
+    },
+    "parentResource": {
+      "Type": "String",
+      "Default": ""
+    },
+    "parentStack": {
+      "Type": "String",
+      "Default": ""
+    },
     "env": {
       "Type": "String"
     }
@@ -28,12 +61,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "S3Trigger0ef60e4e",
+            "k24webc4e5152dPostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "S3Trigger0ef60e4e",
+                  "k24webc4e5152dPostConfirmation",
                   "-",
                   {
                     "Ref": "env"
@@ -47,6 +80,15 @@
           "Variables": {
             "ENV": {
               "Ref": "env"
+            },
+            "MODULES": {
+              "Ref": "modules"
+            },
+            "REGION": {
+              "Ref": "AWS::Region"
+            },
+            "GROUP": {
+              "Ref": "GROUP"
             }
           }
         },
@@ -59,8 +101,8 @@
         "Runtime": "nodejs10.x",
         "Timeout": "25",
         "Code": {
-          "S3Bucket": "amplify-karachi24web-dev-193816-deployment",
-          "S3Key": "amplify-builds/S3Trigger0ef60e4e-48364543644e34484a4b-build.zip"
+          "S3Bucket": "amplify-k24web-dev-21049-deployment",
+          "S3Key": "amplify-builds/k24webc4e5152dPostConfirmation-627a3072465774595253-build.zip"
         }
       }
     },
@@ -70,12 +112,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "S3Trigger0ef60e4eLambdaRole0ef60e4e",
+            "k24webc4e5152dPostConfirmation",
             {
               "Fn::Join": [
                 "",
                 [
-                  "S3Trigger0ef60e4eLambdaRole0ef60e4e",
+                  "k24webc4e5152dPostConfirmation",
                   "-",
                   {
                     "Ref": "env"
@@ -161,14 +203,14 @@
         ]
       }
     },
-    "Region": {
-      "Value": {
-        "Ref": "AWS::Region"
-      }
-    },
     "LambdaExecutionRole": {
       "Value": {
         "Ref": "LambdaExecutionRole"
+      }
+    },
+    "Region": {
+      "Value": {
+        "Ref": "AWS::Region"
       }
     }
   }
